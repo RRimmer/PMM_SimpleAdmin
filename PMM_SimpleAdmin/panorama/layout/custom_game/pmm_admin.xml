@@ -1,0 +1,681 @@
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/csgostyles.vcss_c" />
+		<include src="s2r://panorama/styles/custom_game/pmm_admin.vcss_c" />
+	</styles>
+	<Panel class="sa-screen" hittest="false">
+		<Panel id="sa-root" class="sa-root sa-hidden pos-left acc-red mode-scroll">
+			<Panel class="sa-head" hittest="false">
+				<Label class="sa-brand stratum-bold-tf" text="{s:sa_brand}" />
+				<Label class="sa-count stratum-medium-tf" text="{s:sa_count}" />
+			</Panel>
+			<Panel class="sa-titles" hittest="false">
+				<Label class="sa-crumb stratum-medium-tf" text="{s:sa_crumb}" />
+				<Label class="sa-title stratum-bold-tf" text="{s:sa_title}" />
+				<Label class="sa-sub stratum-medium-tf" text="{s:sa_sub}" />
+			</Panel>
+			<Panel class="sa-cal" hittest="false">
+				<Panel class="sa-ckrow" hittest="false">
+					<Label id="sa-ck-0" class="sa-ck stratum-bold-tf" text="1" />
+					<Label id="sa-ck-1" class="sa-ck stratum-bold-tf" text="2" />
+					<Label id="sa-ck-2" class="sa-ck stratum-bold-tf" text="3" />
+					<Label id="sa-ck-3" class="sa-ck stratum-bold-tf" text="4" />
+					<Label id="sa-ck-4" class="sa-ck stratum-bold-tf" text="5" />
+					<Label id="sa-ck-5" class="sa-ck stratum-bold-tf" text="6" />
+					<Label id="sa-ck-6" class="sa-ck stratum-bold-tf" text="7" />
+					<Label id="sa-ck-7" class="sa-ck stratum-bold-tf" text="8" />
+					<Label id="sa-ck-8" class="sa-ck stratum-bold-tf" text="9" />
+					<Label id="sa-ck-9" class="sa-ck stratum-bold-tf" text="0" />
+				</Panel>
+				<Panel class="sa-pbar" hittest="false"><Panel id="sa-pfill" class="sa-pfill p-0" hittest="false" /></Panel>
+			</Panel>
+			<Panel id="sa-list" class="sa-list h-1">
+				<Button id="sa-r-0" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="1" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-0" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l0}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h0}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p0}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-1" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="2" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-1" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l1}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h1}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p1}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-2" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="3" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-2" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l2}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h2}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p2}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-3" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="4" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-3" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l3}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h3}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p3}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-4" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="5" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-4" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l4}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h4}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p4}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-5" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="6" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-5" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l5}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h5}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p5}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-6" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="7" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-6" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l6}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h6}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p6}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-7" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="8" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-7" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l7}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h7}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p7}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-8" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="9" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-8" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l8}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h8}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p8}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-9" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="10" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-9" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l9}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h9}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p9}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-10" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="11" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-10" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l10}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h10}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p10}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-11" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="12" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-11" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l11}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h11}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p11}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-12" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="13" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-12" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l12}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h12}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p12}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-13" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="14" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-13" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l13}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h13}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p13}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-14" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="15" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-14" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l14}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h14}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p14}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-15" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="16" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-15" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l15}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h15}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p15}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-16" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="17" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-16" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l16}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h16}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p16}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-17" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="18" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-17" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l17}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h17}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p17}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-18" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="19" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-18" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l18}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h18}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p18}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-19" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="20" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-19" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l19}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h19}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p19}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-20" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="21" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-20" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l20}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h20}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p20}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-21" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="22" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-21" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l21}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h21}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p21}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-22" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="23" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-22" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l22}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h22}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p22}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-23" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="24" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-23" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l23}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h23}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p23}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-24" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="25" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-24" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l24}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h24}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p24}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-25" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="26" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-25" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l25}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h25}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p25}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-26" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="27" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-26" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l26}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h26}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p26}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-27" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="28" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-27" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l27}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h27}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p27}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-28" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="29" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-28" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l28}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h28}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p28}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-29" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="30" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-29" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l29}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h29}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p29}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-30" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="31" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-30" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l30}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h30}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p30}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-31" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="32" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-31" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l31}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h31}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p31}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-32" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="33" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-32" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l32}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h32}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p32}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-33" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="34" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-33" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l33}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h33}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p33}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-34" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="35" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-34" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l34}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h34}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p34}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-35" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="36" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-35" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l35}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h35}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p35}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-36" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="37" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-36" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l36}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h36}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p36}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-37" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="38" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-37" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l37}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h37}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p37}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-38" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="39" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-38" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l38}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h38}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p38}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-39" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="40" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-39" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l39}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h39}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p39}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-40" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="41" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-40" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l40}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h40}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p40}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-41" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="42" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-41" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l41}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h41}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p41}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-42" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="43" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-42" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l42}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h42}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p42}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-43" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="44" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-43" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l43}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h43}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p43}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-44" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="45" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-44" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l44}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h44}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p44}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-45" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="46" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-45" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l45}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h45}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p45}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-46" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="47" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-46" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l46}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h46}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p46}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-47" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="48" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-47" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l47}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h47}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p47}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-48" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="49" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-48" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l48}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h48}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p48}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-49" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="50" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-49" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l49}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h49}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p49}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-50" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="51" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-50" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l50}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h50}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p50}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-51" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="52" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-51" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l51}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h51}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p51}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-52" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="53" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-52" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l52}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h52}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p52}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-53" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="54" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-53" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l53}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h53}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p53}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-54" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="55" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-54" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l54}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h54}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p54}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-55" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="56" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-55" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l55}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h55}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p55}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-56" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="57" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-56" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l56}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h56}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p56}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-57" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="58" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-57" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l57}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h57}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p57}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-58" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="59" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-58" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l58}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h58}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p58}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-59" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="60" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-59" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l59}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h59}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p59}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-60" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="61" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-60" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l60}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h60}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p60}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-61" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="62" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-61" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l61}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h61}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p61}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-62" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="63" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-62" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l62}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h62}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p62}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+				<Button id="sa-r-63" class="sa-row slot-off">
+					<Panel class="sa-rbar" hittest="false" />
+					<Label class="sa-key stratum-medium-tf" text="64" />
+					<Panel class="sa-tm" hittest="false" />
+					<Panel id="sa-ic-63" class="sa-ic ic-star" hittest="false" />
+					<Label class="sa-lab stratum-bold-tf" text="{s:sa_l63}" />
+					<Label class="sa-hint stratum-medium-tf" text="{s:sa_h63}" />
+					<Label class="sa-pill stratum-bold-tf" text="{s:sa_p63}" />
+					<Label class="sa-arrow stratum-medium-tf" text="›" />
+				</Button>
+			</Panel>
+			<Panel class="sa-foot">
+				<Button id="sa-back" class="sa-fb fb-back"><Label class="sa-fk stratum-medium-tf" text="8" /><Label class="sa-ft stratum-medium-tf" text="{s:sa_back}" /></Button>
+				<Button id="sa-next" class="sa-fb fb-next"><Label class="sa-fk stratum-medium-tf" text="9" /><Label class="sa-ft stratum-medium-tf" text="{s:sa_next}" /></Button>
+				<Button id="sa-close" class="sa-fb fb-close"><Label class="sa-fk stratum-medium-tf" text="0" /><Label class="sa-ft stratum-medium-tf" text="{s:sa_close}" /></Button>
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

@@ -1,0 +1,230 @@
+{
+  "Enabled": true,
+  "ForcePanorama": true,
+  "Debug": false,
+  "LayoutPath": "panorama/layout/custom_game/pmm_admin.xml",
+  "Position": "Left",
+  "Accent": "Red",
+  "OpenDelay": 0.2,
+  "InputDelay": 0.2,
+  "DefaultStyle": "Scroll",
+  "ShowSettings": true,
+  "SettingsIcon": "colorwheel",
+  "KeyTestTimeout": 40,
+  "ShowCategoryCounts": true,
+  "ShowServerLine": true,
+  "ShowUserId": true,
+  "SourceAssemblies": [
+    "CS2-SimpleAdmin"
+  ],
+  "VipCore": {
+    "Enabled": true,
+    "Permission": "@css/root",
+    "Menus": {
+      "give": {
+        "Enabled": true,
+        "Permission": ""
+      },
+      "remove": {
+        "Enabled": true,
+        "Permission": ""
+      },
+      "list": {
+        "Enabled": true,
+        "Permission": ""
+      },
+      "reload": {
+        "Enabled": true,
+        "Permission": ""
+      }
+    },
+    "Durations": [
+      60,
+      1440,
+      4320,
+      10080,
+      43200,
+      0
+    ],
+    "ShowBots": false
+  },
+  "MapChooser": {
+    "Enabled": true,
+    "Permission": "@css/changemap",
+    "Menus": {
+      "change": {
+        "Enabled": true,
+        "Permission": ""
+      },
+      "nextmap": {
+        "Enabled": true,
+        "Permission": ""
+      },
+      "votes": {
+        "Enabled": true,
+        "Permission": ""
+      },
+      "pools": {
+        "Enabled": true,
+        "Permission": ""
+      }
+    },
+    "RedirectMapsCommand": true,
+    "RedirectSimpleAdminChangeMap": true
+  },
+  "Store": {
+    "Enabled": true,
+    "Permission": "@css/root",
+    "Menus": {
+      "give_credits": {
+        "Enabled": true,
+        "Permission": ""
+      },
+      "take_credits": {
+        "Enabled": true,
+        "Permission": ""
+      },
+      "give_item": {
+        "Enabled": true,
+        "Permission": ""
+      }
+    },
+    "Credits": [
+      100,
+      500,
+      1000,
+      5000,
+      10000,
+      50000
+    ],
+    "ShowBots": false
+  },
+  "Items": {
+    "Управление игроками": {
+      "Icon": "teamplayer",
+      "Danger": false,
+      "Arrow": true
+    },
+    "Players Manage": {
+      "Icon": "teamplayer",
+      "Danger": false,
+      "Arrow": true
+    },
+    "Управление сервером": {
+      "Icon": "settings",
+      "Danger": false,
+      "Arrow": true
+    },
+    "Server Manage": {
+      "Icon": "settings",
+      "Danger": false,
+      "Arrow": true
+    },
+    "Управление администраторами": {
+      "Icon": "shield",
+      "Danger": false,
+      "Arrow": true
+    },
+    "Admins Manage": {
+      "Icon": "shield",
+      "Danger": false,
+      "Arrow": true
+    },
+    "Развлекательные Команды": {
+      "Icon": "star",
+      "Danger": false,
+      "Arrow": true
+    },
+    "Fun Commands": {
+      "Icon": "star",
+      "Danger": false,
+      "Arrow": true
+    },
+    "Забанить": {
+      "Icon": "",
+      "Danger": true,
+      "Arrow": true
+    },
+    "Ban": {
+      "Icon": "",
+      "Danger": true,
+      "Arrow": true
+    },
+    "Удалить администратора": {
+      "Icon": "",
+      "Danger": true,
+      "Arrow": true
+    },
+    "Remove Admin": {
+      "Icon": "",
+      "Danger": true,
+      "Arrow": true
+    },
+    "Перезапустить игру": {
+      "Icon": "",
+      "Danger": true,
+      "Arrow": true
+    },
+    "Restart Game": {
+      "Icon": "",
+      "Danger": true,
+      "Arrow": true
+    },
+    "Restart Round": {
+      "Icon": "",
+      "Danger": true,
+      "Arrow": false
+    },
+    "Управление VIP": {
+      "Icon": "trophy",
+      "Danger": false,
+      "Arrow": true
+    },
+    "VIP Manage": {
+      "Icon": "trophy",
+      "Danger": false,
+      "Arrow": true
+    },
+    "Управление картами": {
+      "Icon": "random",
+      "Danger": false,
+      "Arrow": true
+    },
+    "Maps Manage": {
+      "Icon": "random",
+      "Danger": false,
+      "Arrow": true
+    },
+    "Управление магазином": {
+      "Icon": "shoppingcart",
+      "Danger": false,
+      "Arrow": true
+    },
+    "Store Manage": {
+      "Icon": "shoppingcart",
+      "Danger": false,
+      "Arrow": true
+    },
+    "Снять VIP": {
+      "Icon": "",
+      "Danger": true,
+      "Arrow": true
+    },
+    "Remove VIP": {
+      "Icon": "",
+      "Danger": true,
+      "Arrow": true
+    },
+    "Забрать кредиты": {
+      "Icon": "",
+      "Danger": true,
+      "Arrow": true
+    },
+    "Take credits": {
+      "Icon": "",
+      "Danger": true,
+      "Arrow": true
+    }
+  },
+  "ConfigVersion": 1
+}

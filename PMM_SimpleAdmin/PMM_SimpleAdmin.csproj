@@ -1,0 +1,53 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Library</OutputType>
+        <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AssemblyName>PMM_SimpleAdmin</AssemblyName>
+        <RootNamespace>PMM_SimpleAdmin</RootNamespace>
+        <Version>0.1.0</Version>
+        <!-- true: MySqlConnector / Microsoft.Data.Sqlite go next to the plugin dll (CounterStrikeSharp.API is runtime-excluded) -->
+        <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="CounterStrikeSharp.API" Version="1.0.376">
+            <ExcludeAssets>runtime</ExcludeAssets>
+        </PackageReference>
+        <!-- Menu style per player: MySQL of CS2-SimpleAdmin or an own SQLite file. Same versions as PMM core 1.2.05. -->
+        <PackageReference Include="MySqlConnector" Version="2.6.2"/>
+        <PackageReference Include="Microsoft.Data.Sqlite" Version="10.0.12"/>
+        <!-- MenuManagerApi.dll must live only in shared/MenuManagerApi -->
+        <ProjectReference Include="..\MenuManagerApi\MenuManagerApi.csproj">
+            <Private>false</Private>
+        </ProjectReference>
+        <!-- Lib.Harmony 2.4.2 (net10.0), same build as PMM_VIPCore / PMM_StoreCore / PMM_GG1MapChooser.
+             Not copied next to the plugin dll: it goes to harmony\ and is loaded into the default context -->
+        <Reference Include="0Harmony">
+            <HintPath>lib\0Harmony.dll</HintPath>
+            <Private>false</Private>
+        </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="lib\0Harmony.dll" Link="harmony\0Harmony.dll" CopyToOutputDirectory="PreserveNewest"/>
+    </ItemGroup>
+
+    <!-- SQLite native library, the same files as PMM core: NuGet's linux build needs GLIBC_2.34,
+         native\linux-x64\libe_sqlite3.so (SQLite 3.49.1) stops at GLIBC_2.28. -->
+    <Target Name="CopySqliteNativeRuntimes" AfterTargets="Build">
+        <ItemGroup>
+            <SqliteLinux Include="$(MSBuildProjectDirectory)\native\linux-x64\libe_sqlite3.so"/>
+            <SqliteMusl Include="$(NuGetPackageRoot)\sqlitepclraw.lib.e_sqlite3\*\runtimes\linux-musl-x64\native\libe_sqlite3.so"/>
+            <SqliteWin Include="$(NuGetPackageRoot)\sqlitepclraw.lib.e_sqlite3\*\runtimes\win-x64\native\e_sqlite3.dll"/>
+        </ItemGroup>
+        <Copy SourceFiles="@(SqliteLinux)" DestinationFolder="$(OutDir)runtimes\linux-x64\native\" SkipUnchangedFiles="true"/>
+        <Copy SourceFiles="@(SqliteMusl)" DestinationFolder="$(OutDir)runtimes\linux-musl-x64\native\" SkipUnchangedFiles="true"/>
+        <Copy SourceFiles="@(SqliteWin)" DestinationFolder="$(OutDir)runtimes\win-x64\native\" SkipUnchangedFiles="true"/>
+    </Target>
+
+    <!-- No reference to CS2-SimpleAdmin: its menus are recognised at run time (Config.SourceAssemblies). -->
+
+</Project>
