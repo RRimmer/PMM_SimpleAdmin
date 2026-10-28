@@ -13,7 +13,7 @@ Admin panel by **Rimmer** for [CS2-SimpleAdmin](https://github.com/daffyyyy/CS2-
 its menus are tagged with Harmony when SimpleAdmin creates them, PMM hands them to this module (`pmm:paint`) and every click
 calls SimpleAdmin's own callbacks.
 
-Current version: **0.1.0**. Needs CounterStrikeSharp 1.0.376 (.NET 10), CS2-SimpleAdmin 1.9.x and MenuManager 1.2.04+ (1.2.05 for the number keys).
+Current version: **0.1.1**. Needs CounterStrikeSharp 1.0.378 (.NET 10), CS2-SimpleAdmin 1.9.x and MenuManager 1.2.04+ (1.2.05 for the number keys).
 
 - Red "Classic+" panel: menu path ("Main › Players ›"), section icons, menu counts on the right of the main menu,
   "map · players / slots" line, team colour and `#userid` on player rows, "›" on entries with a submenu, dangerous actions in red,
@@ -24,7 +24,7 @@ Current version: **0.1.0**. Needs CounterStrikeSharp 1.0.376 (.NET 10), CS2-Simp
   with a mandatory key test (progress bar, pressed and missing keys). The choice is stored in SimpleAdmin's database:
   MySQL table `pmm_sa_players`, or an own `pmm_simpleadmin.sqlite` when SimpleAdmin uses SQLite.
 - Sections of other plugins appear by themselves when the plugin is on the server (all config blocks exist from the first start):
-  - **VIP Manage** — [cs2-VIPCore](https://github.com/partiusfabaa/cs2-VIPCore): give / change VIP (group → term), remove VIP, VIP online, reload config.
+  - **VIP Manage** — [cs2-VIPCore](https://github.com/partiusfabaa/cs2-VIPCore) 1.x / 2.x: give / change VIP (group → term), remove VIP, VIP online, reload config.
   - **Maps Manage** — [GG1MapChooser](https://github.com/ssypchenko/GG1MapChooser): change map (+ random), next map, votes, map pools.
     `!maps` and SimpleAdmin's "Manage server → Change map" lead here.
   - **Store Manage** — [cs2-store](https://github.com/schwarper/cs2-store): give / take credits, give items.
@@ -87,7 +87,7 @@ The changelog is in [CHANGELOG.md](CHANGELOG.md).
 его меню помечаются через Harmony в момент создания, PMM передаёт их этому модулю (`pmm:paint`), а каждый клик вызывает
 обработчики самого SimpleAdmin.
 
-Текущая версия: **0.1.0**. Нужен CounterStrikeSharp 1.0.376 (.NET 10), CS2-SimpleAdmin 1.9.x и MenuManager 1.2.04+ (для цифр — 1.2.05).
+Текущая версия: **0.1.1**. Нужен CounterStrikeSharp 1.0.378 (.NET 10), CS2-SimpleAdmin 1.9.x и MenuManager 1.2.04+ (для цифр — 1.2.05).
 
 - Красная панель «Классика+»: путь по меню («Главное › Игроки ›»), значки разделов, числа справа у разделов главного меню,
   строка «карта · игроки / слоты», цвет команды и `#userid` у игроков, «›» у пунктов с подменю, опасные действия красным,
@@ -98,7 +98,7 @@ The changelog is in [CHANGELOG.md](CHANGELOG.md).
   0 закрыть) с обязательной проверкой клавиш (полоса прогресса, нажатые и оставшиеся цифры). Выбор хранится в базе SimpleAdmin:
   таблица `pmm_sa_players` в MySQL или свой `pmm_simpleadmin.sqlite`, если SimpleAdmin на SQLite.
 - Разделы других плагинов появляются сами, если плагин стоит на сервере (все блоки конфига есть с первого запуска):
-  - **Управление VIP** — [cs2-VIPCore](https://github.com/partiusfabaa/cs2-VIPCore): выдать / изменить VIP (группа → срок), снять VIP, VIP онлайн, перезагрузка конфига.
+  - **Управление VIP** — [cs2-VIPCore](https://github.com/partiusfabaa/cs2-VIPCore) 1.x / 2.x: выдать / изменить VIP (группа → срок), снять VIP, VIP онлайн, перезагрузка конфига.
   - **Управление картами** — [GG1MapChooser](https://github.com/ssypchenko/GG1MapChooser): сменить карту (+ случайная), следующая карта, голосования, пулы карт.
     `!maps` и «Управление сервером → Сменить карту» SimpleAdmin ведут сюда.
   - **Управление магазином** — [cs2-store](https://github.com/schwarper/cs2-store): выдать / забрать кредиты, выдать предмет.

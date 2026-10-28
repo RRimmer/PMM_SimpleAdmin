@@ -38,6 +38,7 @@ public partial class Plugin
 
     private object? _vip;
     private Type? _vipType;
+    private bool _vip2;     // VIPCore 2.x (IsPlayerVip / GivePlayerVip ...), else 1.x (IsClientVip / GiveClientVip ...)
     private object? _gg;
     private object? _shop;
     private Type? _shopType;
@@ -258,25 +259,26 @@ public partial class Plugin
         if (!cfg.Enabled) return "off in the config";
         _vip = Capability("VipCoreApi", "VipCoreApi.IVipCoreApi", "vipcore:core", out _vipType);
         if (_vip == null) return "VIPCore not on the server";
+        _vip2 = _vipType?.GetMethod("IsPlayerVip") != null;
 
         AddCategory(CatVip, "pmm_sa.cat_vip", cfg.Permission);
         AddMenu(CatVip, "give", "pmm_sa.vip_give", cfg.Menus, p => VipPlayers(p, false));
         AddMenu(CatVip, "remove", "pmm_sa.vip_remove", cfg.Menus, p => VipPlayers(p, true));
         AddMenu(CatVip, "list", "pmm_sa.vip_list", cfg.Menus, VipOnline);
         AddMenu(CatVip, "reload", "pmm_sa.vip_reload", cfg.Menus, VipReloadMenu);
-        return $"on (TimeMode {VipTimeMode()})";
+        return $"on (VIPCore {(_vip2 ? "2.x" : "1.x")}, TimeMode {VipTimeMode()})";
     }
+
+    // VIPCore 2.x renamed the player methods of IVipCoreApi (Client -> Player); both generations are supported.
+    private object? VipCall(string v2, string v1, params object?[] args) => Call(_vip, _vipType, _vip2 ? v2 : v1, args);
 
     private (bool Vip, string Group, long Expires) VipInfo(CCSPlayerController p)
     {
         try
         {
-            if (Call(_vip, _vipType, "IsClientVip", p) is not true) return (false, "", 0);
-            string group = Call(_vip, _vipType, "GetClientVipGroup", p) as string ?? "";
-            long expires = -1;
-            if (Get(Get(_vip, "_vipCore"), "Users") is IDictionary users && users.Contains(p.SteamID))
-                expires = Convert.ToInt64(Get(users[p.SteamID], "expires") ?? -1L);
-            return (true, group, expires);
+            if (VipCall("IsPlayerVip", "IsClientVip", p) is not true) return (false, "", 0);
+            string group = VipCall("GetPlayerVipGroup", "GetClientVipGroup", p) as string ?? "";
+            return (true, group, VipExpires(p));
         }
         catch
         {
@@ -294,10 +296,36 @@ public partial class Plugin
         return info.Group;
     }
 
+    // Unix time the VIP ends (0 = forever, -1 = unknown).
+    // 2.x: VipCoreApi._players (PlayersManager).Players -> VipPlayer.Controller / Data.Expires; 1.x: _vipCore.Users[steamid].expires.
+    private long VipExpires(CCSPlayerController p)
+    {
+        try
+        {
+            if (_vip2)
+            {
+                if (Get(Get(_vip, "_players"), "Players") is IEnumerable players)
+                    foreach (var vp in players)
+                        if (Get(vp, "Controller") is CCSPlayerController c && c.IsValid && c.Slot == p.Slot)
+                            return Convert.ToInt64(Get(Get(vp, "Data"), "Expires") ?? -1L);
+                return -1;
+            }
+            if (Get(Get(_vip, "_vipCore"), "Users") is IDictionary users && users.Contains(p.SteamID))
+                return Convert.ToInt64(Get(users[p.SteamID], "expires") ?? -1L);
+        }
+        catch { /* unknown */ }
+        return -1;
+    }
+
     // VIPCore's TimeMode (vip_core.json): 0 seconds, 1 minutes, 2 hours, 3 days.
+    // 2.x: VipCoreApi._coreConfig.Value.TimeMode; 1.x: _vipCore.CoreConfig.TimeMode.
     private int VipTimeMode()
     {
-        try { return Convert.ToInt32(Get(Get(Get(_vip, "_vipCore"), "CoreConfig"), "TimeMode") ?? 0); }
+        try
+        {
+            var cfg = _vip2 ? Get(Get(_vip, "_coreConfig"), "Value") : Get(Get(_vip, "_vipCore"), "CoreConfig");
+            return Convert.ToInt32(Get(cfg, "TimeMode") ?? 0);
+        }
         catch { return 0; }
     }
 
@@ -395,14 +423,15 @@ public partial class Plugin
         {
             if (VipInfo(target).Vip)
             {
-                // Existing VIP: new group / term in the database, then VIPCore reloads the player from it.
-                Call(_vip, _vipType, "SetClientVip", target, group, units);
-                AddTimer(1.5f, () => Server.ExecuteCommand($"css_reload_vip_player {sid}"));
+                // Existing VIP: new group / term. 2.x applies it to the online player at once;
+                // 1.x only writes the database, so VIPCore reloads the player from it.
+                VipCall("SetPlayerVip", "SetClientVip", target, group, units);
+                if (!_vip2) AddTimer(1.5f, () => Server.ExecuteCommand($"css_reload_vip_player {sid}"));
                 Log(admin, $"css_vip_updateuser {sid} {group} {units}");
             }
             else
             {
-                Call(_vip, _vipType, "GiveClientVip", target, group, units);
+                VipCall("GivePlayerVip", "GiveClientVip", target, group, units);
                 Log(admin, $"css_vip_adduser {sid} {group} {units}");
             }
             Tell(admin, Fmt(TX(c, "pmm_sa.vip_given"), Name(target), group, DurationText(c, minutes)));
@@ -429,7 +458,7 @@ public partial class Plugin
             try
             {
                 ulong sid = target.AuthorizedSteamID?.SteamId64 ?? target.SteamID;
-                Call(_vip, _vipType, "RemoveClientVip", target);
+                VipCall("RemovePlayerVip", "RemoveClientVip", target);
                 Log(a, $"css_vip_deleteuser {sid}");
                 Tell(a, Fmt(TX(c, "pmm_sa.vip_removed"), Name(target)));
             }

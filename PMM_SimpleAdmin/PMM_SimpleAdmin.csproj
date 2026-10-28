@@ -7,13 +7,13 @@
         <Nullable>enable</Nullable>
         <AssemblyName>PMM_SimpleAdmin</AssemblyName>
         <RootNamespace>PMM_SimpleAdmin</RootNamespace>
-        <Version>0.1.0</Version>
+        <Version>0.1.1</Version>
         <!-- true: MySqlConnector / Microsoft.Data.Sqlite go next to the plugin dll (CounterStrikeSharp.API is runtime-excluded) -->
         <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="CounterStrikeSharp.API" Version="1.0.376">
+        <PackageReference Include="CounterStrikeSharp.API" Version="1.0.378">
             <ExcludeAssets>runtime</ExcludeAssets>
         </PackageReference>
         <!-- Menu style per player: MySQL of CS2-SimpleAdmin or an own SQLite file. Same versions as PMM core 1.2.05. -->

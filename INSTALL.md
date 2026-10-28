@@ -1,4 +1,4 @@
-# PMM_SimpleAdmin 0.1.0
+# PMM_SimpleAdmin 0.1.1
 
 ## RU
 
@@ -14,7 +14,7 @@ SimpleAdmin **не пересобирается**. Он строит меню ч
 
 ### Что нужно
 
-- CounterStrikeSharp 1.0.376+
+- CounterStrikeSharp 1.0.378+
 - PanoramaMenuManager (MenuManagerCore) **1.2.04+**, лучше **1.2.05** (заглушки PlayerSettings / AnyBaseLib для SimpleAdmin) и `shared/MenuManagerApi` той же версии
 - CS2-SimpleAdmin 1.9.x. `MenuConfigs.MenuType` в его конфиге может быть любым — при `ForcePanorama: true` панель открывается всегда.
 
@@ -44,6 +44,10 @@ SimpleAdmin **не пересобирается**. Он строит меню ч
 и в `MenuConfigs.MenuType` SimpleAdmin. При `false` — только игрокам с PanoramaMenu (мышь) в `!menu`.
 
 ### Конфиг `PMM_SimpleAdmin.json`
+
+Файл — JSON с комментариями (`//`, RU + EN): каждый ключ описан прямо в нём. CounterStrikeSharp читает только `.json`,
+поэтому имя остаётся `PMM_SimpleAdmin.json`. После последнего элемента блока запятую не ставить. Если новая версия
+дописывает в файл недостающие ключи, комментарии пропадают — старый файл сохраняется рядом как `PMM_SimpleAdmin.json.bak`.
 
 | Ключ | Что делает |
 |---|---|
@@ -104,7 +108,7 @@ spec_usenumberkeys_nobinds 0;bind "1" "css_1; slot1";bind "2" "css_2; slot2";bin
 У каждого блока: `Enabled` — раздел вкл/выкл, `Permission` — кто видит раздел (один флаг `@css/...` или группа `#css/...`),
 `Menus` — пункты раздела, у каждого `Enabled` и свой `Permission` (пусто = хватает флага раздела).
 
-**`VipCore`** — [cs2-VIPCore](https://github.com/partiusfabaa/cs2-VIPCore), раздел «Управление VIP» (по умолчанию `@css/root`):
+**`VipCore`** — [cs2-VIPCore](https://github.com/partiusfabaa/cs2-VIPCore) 1.x и 2.x, раздел «Управление VIP» (по умолчанию `@css/root`):
 
 | Пункт | Что делает |
 |---|---|
@@ -171,7 +175,9 @@ Needs PanoramaMenuManager 1.2.04+ (1.2.05 recommended). Server: copy `Server-plu
 to the MultiAddonManager addon and rebuild it. With `ForcePanorama: true` (default) every admin gets the panel,
 whatever the `!menu` choice or SimpleAdmin's `MenuType`. Texts and renames: section `PMM_SimpleAdmin` of `configs/plugins/MenuManagerCore/MenuManager_Modules_Translation.json`.
 Integrations (all blocks are in the config from the first start; a missing plugin just means no section):
-`VipCore` (cs2-VIPCore: give / change / remove VIP, VIP online, reload; terms in minutes converted to VIPCore's `TimeMode`),
+`VipCore` (cs2-VIPCore 1.x and 2.x: give / change / remove VIP, VIP online, reload; terms in minutes converted to VIPCore's `TimeMode`),
 `MapChooser` (GG1MapChooser: change map, next map, votes, map pools; `!maps` and SimpleAdmin's "Change map" lead to it),
 `Store` (cs2-store: give / take credits, give items). Each has `Enabled`, `Permission` and per-entry `Menus`.
 Console: `css_pmm_sa`, `css_pmm_sa reattach`, `css_pmm_sa debug`, `css_pmm_sa integrations`.
+Config: `configs/plugins/PMM_SimpleAdmin/PMM_SimpleAdmin.json` is JSON with comments (`//`, RU + EN) for every key; CounterStrikeSharp
+reads only `.json`, so the name stays. When a new version writes missing keys, the comments are lost and the old file is kept as `PMM_SimpleAdmin.json.bak`.

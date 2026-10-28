@@ -1,5 +1,23 @@
 # PMM_SimpleAdmin
 
+## 0.1.1
+
+### RU
+
+- VIPCore 2.0.0 (partiusfabaa): «Управление VIP» снова выдаёт, меняет и снимает VIP. В VIPCore 2 методы API переименованы (`IsClientVip` → `IsPlayerVip`, `GiveClientVip` → `GivePlayerVip`, `SetClientVip` → `SetPlayerVip`, `RemoveClientVip` → `RemovePlayerVip`), срок VIP и `TimeMode` лежат в других местах.
+- Модуль сам определяет VIPCore 1.x или 2.x, со старым VIPCore всё работает как раньше. В VIPCore 2 смена группы / срока применяется к игроку сразу, без `css_reload_vip_player`.
+- `css_pmm_sa` показывает в строке `integrations`, какой VIPCore найден (`VIPCore 2.x` / `1.x`).
+- Сборка под CounterStrikeSharp.API 1.0.378 (MenuManagerApi требует ≥ 1.0.377; раньше сборка падала с NU1605).
+- `PMM_SimpleAdmin.json` в архиве с комментариями (`//`, RU + EN) к каждому ключу; исходник — `PMM_SimpleAdmin.example.jsonc`. Когда модуль дописывает новые ключи, прежний файл с комментариями сохраняется как `PMM_SimpleAdmin.json.bak`.
+
+### EN
+
+- VIPCore 2.0.0 (partiusfabaa): "VIP Manage" gives, changes and removes VIP again. VIPCore 2 renamed the API methods (`IsClientVip` → `IsPlayerVip`, `GiveClientVip` → `GivePlayerVip`, `SetClientVip` → `SetPlayerVip`, `RemoveClientVip` → `RemovePlayerVip`) and keeps the VIP expiry and `TimeMode` elsewhere.
+- VIPCore 1.x or 2.x is detected by itself; the old VIPCore works as before. With VIPCore 2 a new group / term applies to the player at once, without `css_reload_vip_player`.
+- `css_pmm_sa` shows the VIPCore generation in the `integrations` line.
+- Built against CounterStrikeSharp.API 1.0.378 (MenuManagerApi needs ≥ 1.0.377; the build failed with NU1605 before).
+- `PMM_SimpleAdmin.json` in the archive has comments (`//`, RU + EN) for every key; the source is `PMM_SimpleAdmin.example.jsonc`. When the module writes new keys, the old commented file is kept as `PMM_SimpleAdmin.json.bak`.
+
 ## 0.1.0
 
 ### RU

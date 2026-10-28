@@ -251,6 +251,13 @@ internal static class ConfigUpgrade
             }
 
             if (added == 0) return;
+            // The rewritten file has no // comments any more: keep the commented one next to it.
+            string text = File.ReadAllText(path);
+            if (text.Contains("//"))
+            {
+                File.Copy(path, path + ".bak", true);
+                log.LogInformation("Config: comments are not kept when new options are written, the old file is {Bak}", path + ".bak");
+            }
             File.WriteAllText(path, file.ToJsonString(new JsonSerializerOptions
             {
                 WriteIndented = true,

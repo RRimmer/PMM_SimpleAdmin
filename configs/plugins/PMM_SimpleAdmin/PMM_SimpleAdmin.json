@@ -1,25 +1,74 @@
+// PMM_SimpleAdmin — config. File: configs/plugins/PMM_SimpleAdmin/PMM_SimpleAdmin.json
+// JSON с комментариями: строки с // CounterStrikeSharp пропускает. После последнего элемента блока запятую не ставить.
+// JSON with comments: // lines are ignored by CounterStrikeSharp. No comma after the last item of a block.
+// После изменений — перезапуск сервера. / Restart the server after changes.
 {
+  // false — меню SimpleAdmin остаются обычными меню PMM.
+  // false = SimpleAdmin menus stay the usual PMM menus.
   "Enabled": true,
+  // true — панель всегда, что бы ни было выбрано в !menu и в MenuType SimpleAdmin.
+  // false — панель только у игроков с PanoramaMenu (мышь) в !menu.
+  // true = always the panel; false = only for players with PanoramaMenu in !menu.
   "ForcePanorama": true,
+  // Строки [debug] в логе при каждом открытии меню PMM (то же, что css_pmm_sa debug).
+  // Debug lines in the server log.
   "Debug": false,
+
+  // Файл разметки панели в аддоне (менять, только если переименовали).
+  // Panel layout file in the addon.
   "LayoutPath": "panorama/layout/custom_game/pmm_admin.xml",
+  // Где панель: Left / Center / Right.
+  // Panel position.
   "Position": "Left",
+  // Цвет шапки: Red, Bright, Dark, Coral.
+  // Header colour.
   "Accent": "Red",
+  // Пауза перед показом панели и перед захватом мыши, сек (в кадре команды !admin рисовать нельзя — кик).
+  // Delay before the first draw / mouse capture, s.
   "OpenDelay": 0.2,
   "InputDelay": 0.2,
+
+  // Стиль меню, пока игрок не выбрал свой: Scroll (колёсико, без цифр), Pages (страницы, без цифр),
+  // Keys (цифры: 1–7 выбор, 8 назад, 9 далее, 0 закрыть; нужны бинды css_N).
+  // Default menu style: Scroll / Pages / Keys.
   "DefaultStyle": "Scroll",
+  // Пункт «Настройки панели» в главном меню (стиль меню, проверка цифр). Выбор игрока хранится в базе.
+  // "Panel settings" entry in the main menu.
   "ShowSettings": true,
+  // Значок пункта настроек (список значков — в INSTALL.md).
+  // Icon of the settings entry.
   "SettingsIcon": "colorwheel",
+  // Проверка цифр: через столько секунд без нажатий — назад в настройки.
+  // Number keys test timeout, s.
   "KeyTestTimeout": 40,
+  // Числа справа у разделов главного меню (сколько пунктов доступно админу).
+  // Counts on the right of the main menu sections.
   "ShowCategoryCounts": true,
+  // Строка «карта · игроки / слоты» в главном меню.
+  // "map · players / slots" line in the main menu.
   "ShowServerLine": true,
+  // #userid справа у игроков.
+  // #userid on the right of player rows.
   "ShowUserId": true,
+  // Сборки, чьи меню рисует панель. Модули SimpleAdmin (FunCommands и свои) строят меню через API SimpleAdmin и ловятся тоже.
+  // Assemblies whose menus the panel draws.
   "SourceAssemblies": [
     "CS2-SimpleAdmin"
   ],
+
+  // Раздел «Управление VIP» (cs2-VIPCore 1.x / 2.x).
+  // "VIP Manage" section (cs2-VIPCore).
   "VipCore": {
+    // false — раздела нет, даже если плагин стоит на сервере.
+    // false = no section.
     "Enabled": true,
+    // Кто видит раздел (собственные css_vip_* команды VIPCore требуют @css/root).
+    // Who sees the section.
     "Permission": "@css/root",
+    // give — выдать / изменить VIP (игрок → группа → срок); remove — снять VIP;
+    // list — VIP онлайн (клик — сменить группу / срок); reload — css_vip_reload.
+    // Permission "" — хватает права раздела; иначе один флаг ("@css/ban") или группа ("#css/admin").
+    // Per entry: Enabled, Permission ("" = the section permission).
     "Menus": {
       "give": {
         "Enabled": true,
@@ -38,6 +87,8 @@
         "Permission": ""
       }
     },
+    // Сроки в меню «выдать», в МИНУТАХ (0 — навсегда). Модуль сам переводит в TimeMode VIPCore.
+    // Terms in minutes, 0 = forever.
     "Durations": [
       60,
       1440,
@@ -46,11 +97,24 @@
       43200,
       0
     ],
+    // Боты в списках игроков.
+    // Bots in player lists.
     "ShowBots": false
   },
+
+  // Раздел «Управление картами» (GG1MapChooser).
+  // "Maps Manage" section (GG1MapChooser).
   "MapChooser": {
+    // false — раздела нет, даже если плагин стоит на сервере.
+    // false = no section.
     "Enabled": true,
+    // Тот же флаг, что у !maps / ggmap самого GG1MapChooser.
+    // Same flag as GG1MapChooser !maps.
     "Permission": "@css/changemap",
+    // change — сменить карту сейчас (+ случайная); nextmap — следующая карта;
+    // votes — голосования за карту; pools — пулы карт и голосование за пул.
+    // Permission "" — хватает права раздела; иначе один флаг ("@css/ban") или группа ("#css/admin").
+    // Per entry: Enabled, Permission ("" = the section permission).
     "Menus": {
       "change": {
         "Enabled": true,
@@ -69,12 +133,26 @@
         "Permission": ""
       }
     },
+    // !maps (css_maps GG1MapChooser) открывает этот раздел админки вместо меню GG1.
+    // !maps opens this section.
     "RedirectMapsCommand": true,
+    // «Управление сервером → Сменить карту» SimpleAdmin показывает карты GG1MapChooser (его пулы и названия).
+    // SimpleAdmin "Change map" shows GG1MapChooser maps.
     "RedirectSimpleAdminChangeMap": true
   },
+
+  // Раздел «Управление магазином» (cs2-store, schwarper).
+  // "Store Manage" section (cs2-store).
   "Store": {
+    // false — раздела нет, даже если плагин стоит на сервере.
+    // false = no section.
     "Enabled": true,
+    // Кто видит раздел.
+    // Who sees the section.
     "Permission": "@css/root",
+    // give_credits / take_credits — игрок → сумма; give_item — игрок → тип → предмет.
+    // Permission "" — хватает права раздела; иначе один флаг ("@css/ban") или группа ("#css/admin").
+    // Per entry: Enabled, Permission ("" = the section permission).
     "Menus": {
       "give_credits": {
         "Enabled": true,
@@ -89,6 +167,8 @@
         "Permission": ""
       }
     },
+    // Суммы в меню кредитов.
+    // Amounts in the credits menus.
     "Credits": [
       100,
       500,
@@ -97,8 +177,15 @@
       10000,
       50000
     ],
+    // Боты в списках игроков.
+    // Bots in player lists.
     "ShowBots": false
   },
+
+  // Вид пунктов меню. Ключ — текст пункта точно как у SimpleAdmin (на любом языке: «Забанить» и «Ban» — два ключа).
+  // Icon — значок слева ("" — без значка), Danger — красный текст, Arrow — «›» сразу (после первого клика модуль запоминает сам).
+  // Новое название и серая подсказка справа — в файле переводов (зависят от языка игрока).
+  // Menu entry look by SimpleAdmin text: Icon, Danger (red), Arrow ("›" at once).
   "Items": {
     "Управление игроками": {
       "Icon": "teamplayer",
@@ -226,5 +313,8 @@
       "Arrow": true
     }
   },
+
+  // Служебное, не менять.
+  // Internal, do not change.
   "ConfigVersion": 1
 }

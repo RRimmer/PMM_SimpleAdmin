@@ -19,7 +19,7 @@ namespace PMM_SimpleAdmin;
 public partial class Plugin : BasePlugin, IPluginConfig<SimpleAdminPanelConfig>
 {
     public override string ModuleName => "PMM_SimpleAdmin";
-    public override string ModuleVersion => "0.1.0";
+    public override string ModuleVersion => "0.1.1";
     public override string ModuleAuthor => "Rimmer";
     public override string ModuleDescription => "CS2-SimpleAdmin menus on a PanoramaMenuManager panel";
 
